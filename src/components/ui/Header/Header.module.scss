@@ -1,0 +1,60 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2em;
+}
+
+.headerDark {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+}
+
+.theme {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.filter {
+  display: flex;
+  margin-top: 35px;
+  justify-content: space-between;
+
+  input {
+    @media (max-width: 767px) {
+      display: block;
+    }
+  }
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+    justify-content: start;
+    width: 100%;
+  }
+}
+
+.filterDark {
+  display: flex;
+  margin-top: 35px;
+  justify-content: space-between;
+  background-color: #000;
+  color: #fff;
+}
+
+.wrapper {
+  background-color: #fff;
+}
+
+.wrapperDark {
+  background-color: #000;
+  color: #fff;
+}

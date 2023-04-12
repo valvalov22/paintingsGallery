@@ -1,0 +1,22 @@
+.light {
+  color: black;
+  background-color: #fff;
+}
+
+.dark {
+  color: #fff;
+  background-color: #000;
+}
+
+.dark-grid {
+  color: #000;
+}
+
+.dark-pag {
+  color: #fff;
+  background-color: #000;
+  &:hover {
+    background-color: #000000;
+    cursor: pointer;
+  }
+}
