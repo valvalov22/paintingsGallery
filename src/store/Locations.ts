@@ -39,7 +39,7 @@ class Locations {
       });
   };
 
-  changeLocation = (id) => {
+  changeLocation = (id: number) => {
     data.loading = true;
     picture.pictures = [];
     axios
@@ -58,11 +58,11 @@ class Locations {
       });
   };
 
-  changeCurrentLocationName = (name) => {
+  changeCurrentLocationName = (name: string) => {
     this.currentLocationName = name;
   };
 
-  changeCurrentLocation = (id) => {
+  changeCurrentLocation = (id: number) => {
     this.currentLocation = id;
   };
 

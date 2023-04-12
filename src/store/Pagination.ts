@@ -29,7 +29,7 @@ class Pagination {
       });
   };
 
-  changePage = (pageNumber) => {
+  changePage = (pageNumber: number) => {
     this.currentPage = pageNumber;
     picture.pictures = [];
     data.loading = true;

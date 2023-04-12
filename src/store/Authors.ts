@@ -17,7 +17,7 @@ class Authors {
     makeAutoObservable(this);
   }
 
-  changeCurrentAuthorName = (name) => {
+  changeCurrentAuthorName = (name: string) => {
     this.currentAuthorName = name;
   };
 
@@ -42,11 +42,11 @@ class Authors {
       });
   };
 
-  changeCurrentAuthor = (id) => {
+  changeCurrentAuthor = (id: number) => {
     this.currentAuthor = id;
   };
 
-  changeAuthor = (id) => {
+  changeAuthor = (id: number) => {
     data.loading = true;
     picture.pictures = [];
     axios
@@ -66,14 +66,6 @@ class Authors {
   };
 
   fetchAuthors = () => {
-    axios.get(`${this.baseUrl}authors`).then((result) => {
-      runInAction(() => {
-        this.authors = result.data;
-      });
-    });
-  };
-
-  fetchAuthorById = (id) => {
     axios.get(`${this.baseUrl}authors`).then((result) => {
       runInAction(() => {
         this.authors = result.data;

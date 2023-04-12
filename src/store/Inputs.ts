@@ -36,7 +36,7 @@ class Inputs {
       });
   };
 
-  fetchByDate = (from, to) => {
+  fetchByDate = (from: string, to: string) => {
     this.from = from;
     this.to = to;
     picture.pictures = [];

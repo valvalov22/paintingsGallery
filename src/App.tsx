@@ -3,7 +3,6 @@ import './App.scss';
 import Home from './pages/Home';
 import React, { useEffect } from 'react';
 import { data } from './store/Data';
-import { picture } from './store/Pictures';
 
 const App = observer(() => {
   useEffect(() => {
