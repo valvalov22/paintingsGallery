@@ -37,7 +37,7 @@ class Pagination {
       .get(
         `${this.baseUrl}paintings?_page=${pageNumber}&_limit=12${inputs.queryValue ? `&q=${inputs.queryValue}` : ''}${
           inputs.from ? `&created_gte=${inputs.from}` : ''
-        }`,
+        }${inputs.to ? `&created_lte=${inputs.to}` : ''}`,
       )
       .then((result) => {
         runInAction(() => {

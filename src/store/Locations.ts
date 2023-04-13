@@ -6,6 +6,7 @@ import { author } from './Authors';
 import { inputs } from './Inputs';
 import { picture } from './Pictures';
 import { TLocations } from '../components/types/types';
+import { pagination } from './Pagination';
 
 class Locations {
   locations: TLocations[] = [];
@@ -21,12 +22,13 @@ class Locations {
   clearLocations = () => {
     this.currentLocation = 0;
     this.currentLocationName = 'Location';
+    pagination.currentPage = 1;
     data.loading = true;
     picture.pictures = [];
     axios
       .get(
-        `${this.baseUrl}paintings${author.currentAuthor > 0 ? `?authorId=${author.currentAuthor}` : ''}${
-          author.currentAuthor > 0 ? '' : '?_limit=12'
+        `${this.baseUrl}paintings?_page=${pagination.currentPage}${author.currentAuthor > 0 ? '' : '&_limit=12'}${
+          author.currentAuthor > 0 ? `&authorId=${author.currentAuthor}` : ''
         }${inputs.queryValue ? `&q=${inputs.queryValue}` : ''}${inputs.from ? `&created_gte=${inputs.from}` : ''}${
           inputs.to ? `&created_lte=${inputs.to}` : ''
         }`,

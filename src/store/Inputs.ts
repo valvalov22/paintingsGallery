@@ -5,6 +5,7 @@ import { data } from './Data';
 import { picture } from './Pictures';
 import { author } from './Authors';
 import { location } from './Locations';
+import { pagination } from './Pagination';
 
 class Inputs {
   from = '';
@@ -20,6 +21,9 @@ class Inputs {
     data.loading = true;
     this.queryValue = value;
     picture.pictures = [];
+    if (this.queryValue === '') {
+      pagination.currentPage = 1;
+    }
     axios
       .get(
         `${this.baseUrl}paintings?q=${this.queryValue}&_limit=12${
@@ -41,6 +45,10 @@ class Inputs {
     this.to = to;
     picture.pictures = [];
     data.loading = true;
+    // if (this.from === '' && this.to === '') {
+    //   pagination.currentPage = 1;
+    // }
+    pagination.currentPage = 1;
     axios
       .get(
         `${this.baseUrl}paintings?${this.from !== '' ? `created_gte=${from}` : ''}&${
