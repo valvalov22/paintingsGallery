@@ -21,6 +21,7 @@ class Inputs {
     data.loading = true;
     this.queryValue = value;
     picture.pictures = [];
+    pagination.currentPage = 1;
     if (this.queryValue === '') {
       pagination.currentPage = 1;
     }
